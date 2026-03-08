@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Student Portfolio</title>
+    <link rel="stylesheet" href="potfodio.css">
+</head>
+<body>
+    <!-- loading overlay -->
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+    <!-- scroll progress bar -->
+    <div id="progress-bar"></div>
+    <div class="background">
+        <canvas id="bg-canvas"></canvas>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+    </div>
+    <header>
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <a href="myresume.html"resume.htm id="resume-link"><button id="resume-download" aria-label="Download resume">📄 Resume</button></a>
+            <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            <div class="menu-toggle">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero fade-in">
+        <h1 id="hero-title"></h1>
+        <p id="hero-subtitle">Hi! I'm Santush, a web developer and designer. I build sleek, responsive sites with a flair for UX and motion.</p>
+    </section>
+
+    <section id="about" class="about fade-in">
+        <div class="about-content">
+            <img src="san.jpeg" alt="Profile picture">
+            <div>
+                <h2>About Me</h2>
+                <p> Hello everyone, my name is Santush. I am a student and I am interested in learning about technology and programming. I like to explore the technical field very much, i am artificial intelligence, and data science student. I am also interested in full stack development and data science. My goal is to improve my knowledge and skills in the field of technology and explore the possibilities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills fade-in">
+        <h2>Skills</h2>
+        <div class="skill-bar">
+            <span class="skill-name">HTML &amp; CSS</span>
+            <div class="bar"><div class="fill" data-width="90%"></div></div>
+        </div>
+        <div class="skill-bar">
+            <span class="skill-name">JavaScript</span>
+            <div class="bar"><div class="fill" data-width="75%"></div></div>
+        </div>
+        <div class="skill-bar">
+            <span class="skill-name">Python</span>
+            <div class="bar"><div class="fill" data-width="80%"></div></div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience fade-in">
+        <h2>Experience</h2>
+        <ul class="timeline">
+            <li>
+                <h3>Frontend Intern - TechCorp</h3>
+                <span class="period">Jan 2025 – Apr 2025</span>
+                <p>Worked on responsive UI components using React and improved page load performance by 20%.</p>
+            </li>
+            <li>
+                <h3>Web Assistant - University Lab</h3>
+                <span class="period">Sep 2023 – Dec 2024</span>
+                <p>Maintained departmental website, implemented interactive data visualizations with D3.js.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="education" class="education fade-in">
+        <h2>Education</h2>
+        <ul class="timeline">
+            <li>
+                <h3>B.Tec Artificial Intelligence & Data Science</h3>
+                <span class="period">2025 – 2029</span>
+                <p>Anna University chennai</p>
+            </li>
+            <li>
+                <h3>High School Diploma</h3>
+                <span class="period">2024 – 2025</span>
+                <p>Victory metric higher Senior Secondary School</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="projects" class="projects fade-in">
+        <h2>Projects</h2>
+        <div class="project-card fade-in">About project details
+            <h3>Project One</h3>
+            <p>Brief description of the first project.I created an website for product review. and some more science projects</p>
+        </div>
+        <div class="project-card fade-in">
+            <h3>Project Two</h3>
+            <p>Description of the second project. Add links and images as needed to showcase your work.</p>
+        </div>
+        <!-- add more cards as needed -->
+    </section>
+
+    <section id="testimonials" class="testimonials fade-in">
+        <h2>Testimonials</h2>
+        <div class="testimonial-card fade-in">
+            <p>"Santush is a dedicated learner who consistently goes the extra mile. His projects are thoughtful and well-executed."</p>
+            <span>- Mentor</span>
+        </div>
+        <div class="testimonial-card fade-in">
+            <p>"Working with Santush has been a pleasure; he brings creativity and discipline to every task."</p>
+            <span>- Classmate</span>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <h2>Contact</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <p>Feel free to reach out via any of the methods below or send a message using the form.</p>
+                <div class="info-item gmail-item">
+                    <span class="icon">📧</span>
+                    <a href="Santush570@gmail.com" class="gmail-link">Santush570@gmail.com</a>
+                </div>
+                <div class="info-item">
+                    <span class="icon">📞</span>
+                    <a href="tel:+919486581772">+91 9486581772</a>
+                </div>
+                <div class="info-item">
+                    <span class="icon">📍</span>
+                    <span>Thiruvithamcodue, India</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub">🐙</a>
+                    <a href="#" aria-label="LinkedIn">🔗</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <form class="contact-form" action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Make your message..." class="message-box"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <button id="back-to-top" title="Back to top">↑</button>
+
+    <footer>
+        <p>&copy; 2026 Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- submission modal -->
+    <div id="form-modal" class="modal">
+        <div class="modal-content">
+            <p>Thank you! Your message has been sent.</p>
+            <button id="modal-close">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // mobile menu toggle & theme switch
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.querySelector('.menu-toggle');
+            const navUL = document.querySelector('nav ul');
+            toggle.addEventListener('click', () => {
+                navUL.classList.toggle('show');
+            });
+
+            const themeBtn = document.getElementById('theme-toggle');
+            const body = document.body;
+            // load saved preference
+            if (localStorage.getItem('dark-mode') === 'true') {
+                body.classList.add('dark-theme');
+                themeBtn.textContent = '☀️';
+            }
+            themeBtn.addEventListener('click', () => {
+                const isDark = body.classList.toggle('dark-theme');
+                themeBtn.textContent = isDark ? '☀️' : '🌙';
+                localStorage.setItem('dark-mode', isDark);
+            });
+
+            // animate skills
+            const fills = document.querySelectorAll('.fill');
+            fills.forEach(f => {
+                const width = f.getAttribute('data-width');
+                setTimeout(() => { f.style.width = width; }, 500);
+            });
+
+            // resume download click
+            document.getElementById('resume-download').addEventListener('click', () => {
+                // placeholder file path
+                window.open('resume.pdf', '_blank');
+            });
+
+            // typing effect for hero title
+            const heroTitle = document.getElementById('hero-title');
+            const titleText = "Welcome to My Portfolio";
+            let idx = 0;
+            function typeChar() {
+                if(idx < titleText.length) {
+                    heroTitle.textContent += titleText[idx++];
+                    setTimeout(typeChar, 100);
+                } else {
+                    heroTitle.textContent += '';
+                    heroTitle.style.borderRight = 'none';
+                }
+            }
+            typeChar();
+
+            // scrollspy navigation
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            const spyObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    const id = entry.target.id;
+                    const link = document.querySelector(`nav ul li a[href="#${id}"]`);
+                    if(entry.isIntersecting) {
+                        navLinks.forEach(l=>l.classList.remove('active'));
+                        if(link) link.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.5 });
+            sections.forEach(s => spyObserver.observe(s));
+
+            // form submission modal
+            const form = document.querySelector('.contact-form');
+            const modal = document.getElementById('form-modal');
+            const modalClose = document.getElementById('modal-close');
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+                form.reset();
+            });
+            modalClose.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            // back to top visibility & click
+            const backBtn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) backBtn.style.display = 'flex';
+                else backBtn.style.display = 'none';
+                // reveal on scroll
+                const faders = document.querySelectorAll('.fade-in');
+                faders.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if(rect.top < window.innerHeight - 100) {
+                        el.classList.add('visible');
+                    }
+                });
+            });
+            backBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // intersection observer for scroll-triggered animations
+            const observerOptions = {
+                threshold: 0.1
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+                observer.observe(el);
+            });
+
+            // hide loader when page loads
+            window.addEventListener('load', () => {
+                document.getElementById('loading-overlay').style.display = 'none';
+            });
+
+            // scroll progress bar update
+            const progressBar = document.getElementById('progress-bar');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const percent = (scrollTop / docHeight) * 100;
+                progressBar.style.width = percent + '%';
+            });
+
+            // typing effect for hero subtitle as well
+            const heroSubtitle = document.getElementById('hero-subtitle');
+            const subtitleText = "I build sleek, responsive sites with a flair for UX and motion.";
+            let sidx = 0;
+            function typeSub() {
+                if(sidx < subtitleText.length) {
+                    heroSubtitle.textContent += subtitleText[sidx++];
+                    setTimeout(typeSub, 80);
+                } else {
+                    heroSubtitle.style.borderRight = 'none';
+                }
+            }
+            heroSubtitle.textContent = '';
+            typeSub();
+
+            // share profile button example
+            const shareBtn = document.createElement('button');
+            shareBtn.textContent = '🔗 Share';
+            shareBtn.id = 'share-btn';
+            shareBtn.style.marginLeft = '0.5rem';
+            document.querySelector('.nav-container').appendChild(shareBtn);
+            shareBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('Link copied to clipboard!');
+                });
+            });
+
+            // particle background
+            const canvas = document.getElementById('bg-canvas');
+            const ctx = canvas.getContext('2d');
+
+            // hero parallax on scroll
+            const hero = document.querySelector('.hero');
+            window.addEventListener('scroll', () => {
+                const offset = window.pageYOffset;
+                hero.style.backgroundPositionY = `${offset * 0.5}px`;
+            });
+            let particles = [];
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+            function createParticles() {
+                particles = [];
+                const count = 100;
+                for(let i=0;i<count;i++){
+                    particles.push({
+                        x: Math.random()*canvas.width,
+                        y: Math.random()*canvas.height,
+                        r: Math.random()*2+1,
+                        vx: (Math.random()-0.5)*0.3,
+                        vy: (Math.random()-0.5)*0.3
+                    });
+                }
+            }
+            function drawParticles(){
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                ctx.fillStyle='rgba(255,255,255,0.6)';
+                particles.forEach(p=>{
+                    ctx.beginPath();
+                    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+                    ctx.fill();
+                    p.x+=p.vx;
+                    p.y+=p.vy;
+                    if(p.x<0) p.x=canvas.width;
+                    if(p.x>canvas.width) p.x=0;
+                    if(p.y<0) p.y=canvas.height;
+                    if(p.y>canvas.height) p.y=0;
+                });
+                requestAnimationFrame(drawParticles);
+            }
+            createParticles();
+            drawParticles();
+
+            // interactive 3D effects for layers and cards
+            const layers = document.querySelectorAll('.background .layer');
+            document.addEventListener('mousemove', e => {
+                const xRatio = (e.clientX / window.innerWidth - 0.5) * 2; // -1 to 1
+                const yRatio = (e.clientY / window.innerHeight - 0.5) * 2;
+                layers.forEach((layer, idx) => {
+                    const depth = (idx + 1) * 10; // difference per layer
+                    layer.style.transform = `translate3d(${xRatio*depth}px, ${yRatio*depth}px, 0) rotateX(0) rotateY(0)`;
+                });
+
+                // tilt contact info container
+                const contactWrapper = document.querySelector('.contact-wrapper');
+                if(contactWrapper) {
+                    const rect = contactWrapper.getBoundingClientRect();
+                    const cx = rect.left + rect.width/2;
+                    const cy = rect.top + rect.height/2;
+                    const dx = e.clientX - cx;
+                    const dy = e.clientY - cy;
+                    const tiltX = (dy / rect.height) * 10;
+                    const tiltY = -(dx / rect.width) * 10;
+                    contactWrapper.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+                }
+            });
+
+            // card tilt effect inside each project/testimonial card
+            const tiltCards = document.querySelectorAll('.project-card, .testimonial-card');
+            tiltCards.forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const cx = rect.width / 2;
+                    const cy = rect.height / 2;
+                    const dx = x - cx;
+                    const dy = y - cy;
+                    const tiltX = (dy / cy) * 10;
+                    const tiltY = -(dx / cx) * 10;
+                    card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+            });
+
+            // optional scroll-based parallax (slow move opposite scroll)
+            window.addEventListener('scroll', () => {
+                const scrollY = window.pageYOffset;
+                layers.forEach((layer, idx) => {
+                    const depth = (idx + 1) * 0.15;
+                    layer.style.transform += ` translateY(${scrollY*depth}px)`;
+                });
+                // section flip effect
+                document.querySelectorAll('section').forEach(sec => {
+                    const rect = sec.getBoundingClientRect();
+                    const offset = (rect.top - window.innerHeight/2) / (window.innerHeight/2);
+                    sec.style.transform = `rotateX(${offset * 3}deg)`;
+                });
+            });
+
+            // optional scroll-based parallax (slow move opposite scroll)
+            window.addEventListener('scroll', () => {
+                const scrollY = window.pageYOffset;
+                layers.forEach((layer, idx) => {
+                    const depth = (idx + 1) * 0.15;
+                    layer.style.transform += ` translateY(${scrollY*depth}px)`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
