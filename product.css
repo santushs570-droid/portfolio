@@ -1,0 +1,158 @@
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-top: 80px;
+    /* solid white text */
+    color: #ffffff;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    animation: float3D 5s ease-in-out infinite, scalePulse 4s ease-in-out infinite;
+}
+
+body {
+    /* allow content to expand and scroll */
+    position: relative;
+    margin: 0;
+    overflow: auto;
+    /* solid fallback background color */
+    background-color: #ffeedd;
+}
+
+/* layout for the three divs */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    padding: 16px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    animation: cardFloat 6s ease-in-out infinite;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05) rotateY(3deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    background: rgba(255,255,255,0.95);
+}
+
+@keyframes cardFloat {
+    0%,100% {transform: translateY(0) rotateY(0);}    
+    50% {transform: translateY(-5px) rotateY(2deg);}   
+}
+
+.card img {
+    border-radius: 8px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.card h2 {
+    margin: 10px 0 6px;
+    font-size: 1.25rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.card button {
+    background-color: #ff6f61;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.card button:hover {
+    background-color: #e55b4d;
+}
+
+/* about products section */
+.about.products {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 1.5s ease-out forwards;
+}
+
+.about.products h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    color: #333;
+}
+
+@keyframes fadeSlideIn {
+    to {opacity: 1; transform: translateY(0);}    
+}
+
+.about.products p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+/* animated background layer */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    /* fallback color in case gradient fails */
+    background-color: #ffeedd;
+    background: linear-gradient(135deg,
+        #ff9a9e 0%,
+        #fad0c4 25%,
+        #fad0c4 50%,
+        #fbc2eb 75%,
+        #a6c0fe 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite,
+               rotate3D 20s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+@keyframes rotate3D {
+    0% {transform: perspective(800px) rotateX(0) rotateY(0);}    
+    25% {transform: perspective(800px) rotateX(10deg) rotateY(20deg);}  
+    50% {transform: perspective(800px) rotateX(-10deg) rotateY(40deg);} 
+    75% {transform: perspective(800px) rotateX(10deg) rotateY(60deg);}  
+    100% {transform: perspective(800px) rotateX(0) rotateY(0);}   
+}
+
+@keyframes float3D {
+    0%,100% {transform: perspective(500px) translateZ(0) rotateY(0);}   
+    50% {transform: perspective(500px) translateZ(20px) rotateY(15deg);}  
+}
+
+@keyframes scalePulse {
+    0%,100% {transform: scale(1);}    
+    50% {transform: scale(1.1);}   
+}
+
