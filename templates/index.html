@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Student Management System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#4facfe,#00f2fe);
+}
+
+.container{ 
+background:white;
+padding:30px;
+width:420px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+h2{
+margin-bottom:20px;
+color:#333;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:6px;
+outline:none;
+}
+
+input:focus{
+border-color:#4facfe;
+}
+
+button{
+margin-top:10px;
+padding:10px 15px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+}
+
+.addBtn{
+background:#4CAF50;
+color:white;
+}
+
+.viewBtn{
+background:#2196F3;
+color:white;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+table{
+margin-top:20px;
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#4facfe;
+color:white;
+padding:8px;
+}
+
+td{
+padding:8px;
+border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+background:#f5f5f5;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Form</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+<input type="text" id="roll" placeholder="Enter Roll Number">
+<input type="text" id="dept" placeholder="Enter Department">
+
+<button class="addBtn" onclick="addStudent()">Add Student</button>
+<button class="viewBtn" onclick="loadStudents()">View Students</button>
+
+<table id="studentTable">
+
+<tr>
+<th>Name</th>
+<th>Roll</th>
+<th>Department</th>
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+function addStudent(){
+
+let name=document.getElementById("name").value;
+let roll=document.getElementById("roll").value;
+let dept=document.getElementById("dept").value;
+
+fetch("/add",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+name:name,
+roll_no:roll,
+department:dept
+})
+})
+.then(res=>res.text())
+.then(data=>{
+alert(data);
+});
+
+}
+
+function loadStudents(){
+
+fetch("/students")
+.then(res=>res.json())
+.then(data=>{
+
+let table=document.getElementById("studentTable");
+
+table.innerHTML=`
+<tr>
+<th>Name</th>
+<th>Roll</th>
+<th>Department</th>
+</tr>
+`;
+
+data.forEach(student=>{
+
+let row=table.insertRow();
+
+row.insertCell(0).innerText=student.name;
+row.insertCell(1).innerText=student.roll_no;
+row.insertCell(2).innerText=student.department;
+
+});
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
